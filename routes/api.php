@@ -41,6 +41,7 @@ Route::post('register', [UserController::class, 'register']);
     Route::get('/faq', [FaqController::class, 'index']);
     Route::post('/faqgrouplist', [FaqController::class, 'faqgrouplist']);
     Route::post('/addfaq',[FaqController::class,'addFaq']);
+    Route::post('/faqreorder',[FaqController::class,'faqreorder']);
     Route::delete('/delfaq/{id}',[FaqController::class,'delFaq']);
     Route::put('/editfaq/{id}',[FaqController::class,'editFaq']);
     Route::get('/faqgroup', [GroupController::class, 'index']);

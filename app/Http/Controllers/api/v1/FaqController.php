@@ -86,6 +86,27 @@ class FaqController extends Controller
 
     }
 
+    /**
+    *
+    */
+    public function faqreorder(request $request)
+    {
+        $this->validate($request, [
+        'tree' => 'required',
+        ]);
+        
+        $i = 0;
+        foreach($request->tree as $item)
+        {
+            Faq::where('id', $item)->update([
+            'orderby' => $i
+            ]);
+            $i++;
+        }
+        
+        return response()->json(['msg' => 'reordered']);
+    }
+
     public function faqgrouplist(Request $request) {
        $validator = Validator::make($request->all(), [ 
             'id' => 'required',

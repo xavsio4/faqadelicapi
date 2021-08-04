@@ -32,7 +32,7 @@ class Group extends Model
 
     public function faqs()
     {
-        return $this->belongsToMany('App\Models\Faq');
+        return $this->belongsToMany('App\Models\Faq')->orderBy('orderby', 'asc');
     }
 
 }
